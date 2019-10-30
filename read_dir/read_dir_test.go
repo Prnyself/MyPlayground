@@ -7,3 +7,9 @@ func TestShow(t *testing.T) {
 		t.Fatal(err)
 	}
 }
+
+func TestShowRecursively(t *testing.T) {
+	if err := ShowRecursively(".."); err != nil {
+		t.Fatal(err)
+	}
+}
