@@ -1,15 +1,15 @@
-package read_dir
+package dir
 
 import "testing"
 
 func TestShow(t *testing.T) {
-	if err := Show(".."); err != nil {
+	if err := Read(".."); err != nil {
 		t.Fatal(err)
 	}
 }
 
 func TestShowRecursively(t *testing.T) {
-	if err := ShowRecursively(".."); err != nil {
+	if err := ReadRecursively(".."); err != nil {
 		t.Fatal(err)
 	}
 }

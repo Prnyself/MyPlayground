@@ -1,4 +1,4 @@
-package read_dir
+package dir
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 )
 
-func Show(path string) error {
+func Read(path string) error {
 	files, err := ioutil.ReadDir(path)
 	if err != nil {
 		return err
@@ -20,7 +20,7 @@ func Show(path string) error {
 	return nil
 }
 
-func ShowRecursively(path string) error {
+func ReadRecursively(path string) error {
 	err := filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		fmt.Printf("now path: %s, name: %s, size: %v, dir? %v\n",
 			path, info.Name(), info.Size(), info.IsDir())
