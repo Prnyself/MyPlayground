@@ -26,6 +26,7 @@ func TestTrimLeft(t *testing.T) {
 	}{
 		{s: "abc", l: "/"},
 		{s: "/abc", l: "/"},
+		{s: "abc/", l: "/"},
 		{s: "/abc/def", l: "/"},
 		{s: "///abc/def", l: "/"},
 	}
