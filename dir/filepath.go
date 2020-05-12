@@ -33,6 +33,20 @@ func Path(input string) error {
 		return err
 	}
 	fmt.Printf("filepath.Rel: base <%s>, target <%s>; res: <%s>\n", dir, input, relPath)
+
+	spDir, spFile := filepath.Split(input)
+	fmt.Printf("filepath.Split: input <%s>, dir <%s>, file <%s>\n", input, spDir, spFile)
 	fmt.Println()
+	return nil
+}
+
+func AbsAndDir(path string) error {
+	abs, err := filepath.Abs(path)
+	if err != nil {
+		return err
+	}
+
+	dir := filepath.Dir(abs)
+	fmt.Printf("input path: <%s>, abs: <%s>, dir: <%s>\n", path, abs, dir)
 	return nil
 }
